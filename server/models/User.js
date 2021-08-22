@@ -4,37 +4,37 @@ import bcrypt from 'bcryptjs'
 import crypto from 'crypto'
 
 const UserSchema =new mongoose.Schema({
-    firstName:{
+    name:{
         type: String,
-        required: [true,'Please enter fir st name']
+        required: [false,'Please enter fir st name']
     },
-    lastName:{
-        type: String,
-        required: [true,'Please enter last name']
-    },
-    phone: {
-        type: String,
-        required: [true,'Please enter phone']
-    },
-    gender: {
-        type: String,
-        required: [true,'Please enter gender'],
-        enum:["male", "female"]
-    },
-    jobRole: {
-        type: String,
-        enum:["user", "guide", "lead-guide", "developer", "admin"],
-        default:'user',
-    },
-    department: {
-        type: String,
-        required: [true,'Please enter department']
-    },
+    // lastName:{
+    //     type: String,
+    //     required: [false,'Please enter last name']
+    // },
+    // phone: {
+    //     type: String,
+    //     required: [false,'Please enter phone']
+    // },
+    // gender: {
+    //     type: String,
+    //     required: [false,'Please enter gender'],
+    //     enum:["male", "female"]
+    // },
+    // jobRole: {
+    //     type: String,
+    //     enum:["user", "guide", "lead-guide", "developer", "admin"],
+    //     default:'user',
+    // },
+    // department: {
+    //     type: String,
+    //     required: [false,'Please enter department']
+    // },
 
-    address: {
-        type: String,
-        required: [true,'Please enter address']
-    },
+    // address: {
+    //     type: String,
+    //     required: [true,'Please enter address']
+    // },
     email:{
         type: String,
         required: [true,'Please enter email'],
