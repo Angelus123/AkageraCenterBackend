@@ -31,25 +31,27 @@ const createSendToken =(user, statusCode,res) => {
 
 
 export const signup = catchAsync(async(req, res, next) =>{
-console.log(req.requestTime )
+console.log(req.body)
     const newUser =await User.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        phone: req.body.phone,
-        gender: req.body.gender,
-        jobRole: req.body.jobRole,
-        department: req.body.department,
-        address: req.body.address,
+             
+        // phone: req.body.phone,
+        // gender: req.body.gender,
+        // jobRole: req.body.jobRole,
+        // department: req.body.department,
+        // address: req.body.address,
+        name: req.body.name, 
         email: req.body.email,
         password: req.body.password,
-        passwordConfirm: req.body.passwordConfirm,
-        passwordChangedAt:req.requestTime 
+        passwordConfirm: req.body.passwordConfirm
+        
     })
+    console.log(newUser)
     createSendToken(newUser,201,res)
 
 })
 
 export const login = catchAsync(async (req,res,next) => {
+    console.log(req.body);
     const {email,password} = req.body
      //1)check if email &pwd exist
     if(!email||!password){
