@@ -1,5 +1,5 @@
 import { now } from "mongoose";
-import article from "../models/Article";
+import article from "../models/Eligibility";
 import catchAsync from "../utils/catchAsync"
 import comment from '../models/Comment';
 import AppError from "../utils/appError";
@@ -28,7 +28,7 @@ export const createArticle = catchAsync(async (req,res,next)=>{
     articleInfo.experience=req.body.experience;
     articleInfo.certificatelang=req.body.certificatelang;
     articleInfo.workingnow=req.body.workingnow;
-   
+    articleInfo.authorId=req.body.creator;
     // articleInfo.authorId=req.user.id;
     articleInfo.createdAt=new Date().toISOString();
     // const name=req.user.firstName+" "+req.user.lastName

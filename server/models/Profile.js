@@ -3,59 +3,56 @@ import mongoose from "mongoose";
 
 
     const artSchema = new mongoose.Schema({
-    title:{
+    fullName:{
         type: String,
       
         required: false
     },
     
-        certificate: {
+    phone: {
             type: String,
           
             required: false
         },
-        university:{
+    email:{
             type: String,
             required: false
         },
-        bachelor:{
+    Nationality:{
             type: String,
             required: false
         },
-        master: {
+    family: {
             type: String,
             required: false
         },
-        foreignlang : {
+     pobox : {
             type: String,
         required: false
         },
-        germanlang: {
+     citycode: {
             type: String,
             required: false
         },
-        certificatelang: {
+      street: {
             type: String,
             required: false
         },
-        internship: {
-            type: String,
-            type: String,
-            required: false
-        },
-        volunteer:{
-            type: String,
-            type: String,
-            required: false
-        },
-        experience: {
-            type: String,
-            required: false
-        },
-        workingnow : {
-            type: String,
-            required: false
-        },
+    birthday: {
+        type: String,
+        type: String,
+        required: false
+    },
+    district:{
+        type: String,
+        type: String,
+        required: false
+    },
+    province: {
+        type: String,
+        required: false
+    },
+       
     authorId:{
         type: String,
         required:false
@@ -64,11 +61,12 @@ import mongoose from "mongoose";
         type: String,
         required: false
     },
-    author:{
+    genre:{
         type: String,
         required: false
     },
+   
 })
 //let article = module.exports= mo.model('Article',artSchma);
-const article = mongoose.model("Article", artSchema);
-export default article;
+const profile = mongoose.model("Profile", artSchema);
+export default profile;
