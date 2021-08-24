@@ -14,12 +14,25 @@ const filterObj = (obj, ...allowedFields) =>{
 }
 export const createArticle = catchAsync(async (req,res,next)=>{
     let articleInfo= {};
+    console.log(req.body)
     articleInfo.title=req.body.title;
-    articleInfo.article=req.body.article;
-    articleInfo.authorId=req.user.id;
+    articleInfo.certificate=req.body.certificate;
+    articleInfo.university=req.body.university;
+    articleInfo.bachelor=req.body.bachelor;
+    articleInfo.master=req.body.master;
+    articleInfo.foreignlang=req.body.foreignlang;
+    articleInfo.germanlang=req.body.germanlang;
+    articleInfo.certificatelang=req.body.certificatelang;
+    articleInfo.internship=req.body.internship;
+    articleInfo.volunteer=req.body.volunteer;
+    articleInfo.experience=req.body.experience;
+    articleInfo.certificatelang=req.body.certificatelang;
+    articleInfo.workingnow=req.body.workingnow;
+   
+    // articleInfo.authorId=req.user.id;
     articleInfo.createdAt=new Date().toISOString();
-    const name=req.user.firstName+" "+req.user.lastName
-    articleInfo.author=name;
+    // const name=req.user.firstName+" "+req.user.lastName
+    // articleInfo.author=name;
     
   
     const newArticle = await article.create(articleInfo);

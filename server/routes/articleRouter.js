@@ -6,7 +6,7 @@ import * as authControl from "../controllers/AuthController"
 const articleRoute = express.Router()
 
 articleRoute.route("/")
-                   .post(authControl.protect, articleControl.createArticle)
+                   .post( articleControl.createArticle)
                    .get(authControl.protect, articleControl.getAllArticles)
                 
 

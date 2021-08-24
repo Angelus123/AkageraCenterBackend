@@ -5,30 +5,69 @@ import mongoose from "mongoose";
     const artSchema = new mongoose.Schema({
     title:{
         type: String,
-        required: true,
-        unique: true
+      
+        required: false
     },
-    article:{
-        type: String,
-        required: true
-    },
+    
+        certificate: {
+            type: String,
+          
+            required: false
+        },
+        university:{
+            type: String,
+            required: false
+        },
+        bachelor:{
+            type: String,
+            required: false
+        },
+        master: {
+            type: String,
+            required: false
+        },
+        foreignlang : {
+            type: String,
+        required: false
+        },
+        germanlang: {
+            type: String,
+            required: false
+        },
+        certificatelang: {
+            type: String,
+            required: false
+        },
+        internship: {
+            type: String,
+            type: String,
+            required: false
+        },
+        volunteer:{
+            type: String,
+            type: String,
+            required: false
+        },
+        experience: {
+            type: String,
+            required: false
+        },
+        workingnow : {
+            type: String,
+            required: false
+        },
     authorId:{
         type: String,
-        required: true
+        required:false
     },
     createdAt:{
         type: String,
-        required: true
+        required: false
     },
     author:{
         type: String,
-        required: true
+        required: false
     },
-
-    
-    
-  
-
 })
 //let article = module.exports= mo.model('Article',artSchma);
 const article = mongoose.model("Article", artSchema);
