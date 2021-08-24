@@ -1,12 +1,12 @@
 import express from "express";
-import * as articleControl from "../controllers/ArticleController";
+import * as articleControl from "../controllers/EligibilityController";
 import * as authControl from "../controllers/AuthController"
 
 
 const articleRoute = express.Router()
 
 articleRoute.route("/")
-                   .post(authControl.protect, articleControl.createArticle)
+                   .post( articleControl.createArticle)
                    .get(authControl.protect, articleControl.getAllArticles)
                 
 

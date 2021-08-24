@@ -5,7 +5,8 @@ import mongoSanitize from 'express-mongo-sanitize'
 import xss from 'xss-clean'
 import hpp from 'xss-clean'
 import CommentRouter from "./routes/commentRoutes"
-import articleRoute from "./routes/articleRouter";
+import eligibilityRoute from "./routes/eligibilityRouter";
+import profileRoute from "./routes/profileRouter"
 import UserRouter from "./routes/userRouter"
 
 import * as globalErrorHandling from "./controllers/ErrorController"
@@ -68,8 +69,8 @@ next()
 // Route
 app.use('/api/v1/comment',CommentRouter)
 app.use('/api/v1/user',UserRouter)
-app.use('/api/v1/article',articleRoute)
-
+app.use('/api/v1/eligibility',eligibilityRoute)
+app.use('/api/v1/profile',profileRoute)
 
 app.all('*', (req,res,next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server`, 404))
